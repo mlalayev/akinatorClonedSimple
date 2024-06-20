@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import az from './translations/az/global.json';
 import en from './translations/en/global.json';
@@ -7,13 +7,35 @@ import charactersData from '../characters.json';
 
 function App() {
   const [language, setLanguage] = useState('en');
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [winningText, setWinningText] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [askedQuestions, setAskedQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [filteredCharacters, setFilteredCharacters] = useState(charactersData);
 
   const translations = language === 'en' ? en : az;
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
+  };
+
+  useEffect(() => {
+    generateRandomQuestion();
+  }, []);
+
+  const generateRandomQuestion = () => {
+    const unansweredQuestions = questionsData.filter(question => !askedQuestions.includes(question.id));
+
+    if (unansweredQuestions.length === 0) {
+      setCurrentQuestionIndex(null);
+      return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * unansweredQuestions.length);
+    const randomQuestion = unansweredQuestions[randomIndex];
+
+    setCurrentQuestionIndex(randomQuestion.id);
+    setAskedQuestions([...askedQuestions, randomQuestion.id]);
   };
 
   const handleAnswer = (answer) => {
@@ -116,6 +138,198 @@ function App() {
         }
         break;
 
+      case 13: //superhero
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "superhero");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "superhero");
+        }
+        break;
+
+      case 14: //marvel universe
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.universe === "Marvel");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.universe !== "Marvel");
+        }
+        break;
+
+      case 15: // DC universe
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.universe === "DC");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.universe !== "DC");
+        }
+        break;
+
+      case 16: // entertainer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "singer" || character.category === "actor" || character.category === "actress" || character.category === "dancer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => !(character.category === "singer" || character.category === "actor" || character.category === "actress" || character.category === "dancer"));
+        }
+        break;
+
+      case 17: // nuclear safety inspector
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Nuclear Safety Inspector");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Nuclear Safety Inspector");
+        }
+        break;
+
+      case 18: // explorer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Explorer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Explorer");
+        }
+        break;
+
+      case 19: // monster
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "monster");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "monster");
+        }
+        break;
+
+      case 20: // singer-songwriter
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "singer" && character.occupation === "Singer-Songwriter");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => !(character.category === "singer" && character.occupation === "Singer-Songwriter"));
+        }
+        break;
+
+      case 21: // actor
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "actor" || character.category === "actress");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => !(character.category === "actor" || character.category === "actress"));
+        }
+        break;
+
+      case 22: // trickster
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "trickster");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "trickster");
+        }
+        break;
+
+      case 23: // Chancellor
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Chancellor");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Chancellor");
+        }
+        break;
+
+      case 24: // astronaut
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "astronaut");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "astronaut");
+        }
+        break;
+
+      case 25: // scientist
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "scientist");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "scientist");
+        }
+        break;
+
+      case 26: // poet
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "poet");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "poet");
+        }
+        break;
+
+      case 27: // dancer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "dancer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "dancer");
+        }
+        break;
+
+      case 28: // writer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "writer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "writer");
+        }
+        break;
+
+      case 29: // composer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "composer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "composer");
+        }
+        break;
+
+      case 30: // revolutionary
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Revolutionary");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Revolutionary");
+        }
+        break;
+
+      case 31: // dictator
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Dictator");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Dictator");
+        }
+        break;
+
+      case 32: // physiologist
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "Physiologist");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "Physiologist");
+        }
+        break;
+
+      case 33: // general secretary of the Communist Party
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation === "General Secretary of the Communist Party");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.occupation !== "General Secretary of the Communist Party");
+        }
+        break;
+
+      case 34: // ballet dancer
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "dancer" && character.occupation === "Ballet Dancer");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => !(character.category === "dancer" && character.occupation === "Ballet Dancer"));
+        }
+        break;
+
+      case 35: // animal
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "animal");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "animal");
+        }
+        break;
+
+      case 36: // leader
+        if (answer === "yes") {
+          updatedCharacters = updatedCharacters.filter(character => character.category === "leader");
+        } else if (answer === "no") {
+          updatedCharacters = updatedCharacters.filter(character => character.category !== "leader");
+        }
+        break;
+
 
       default:
         break;
@@ -123,11 +337,25 @@ function App() {
 
     setFilteredCharacters(updatedCharacters);
 
-    // Move to the next question if there are more questions
-    if (currentQuestionIndex < questionsData.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
+    generateRandomQuestion();
   };
+
+  useEffect(() => {
+    if (filteredCharacters.length === 0) {
+      setErrorMessage(translations.error.message);
+    } else {
+      setErrorMessage('');
+    }
+  }, [filteredCharacters]);
+
+  useEffect(() => {
+    if (filteredCharacters.length === 1) {
+      setWinningText(translations.winner.text);
+    } else {
+      setWinningText('');
+    }
+  }, [filteredCharacters]);
+
 
   return (
     <>
@@ -148,17 +376,26 @@ function App() {
         <h1>{translations.uppertexth.first}</h1>
         <h2>{translations.uppertexth.second}</h2>
 
-        <div className="questionHolder">
-          <p>{questionsData[currentQuestionIndex].id}</p>
-          <p>{questionsData[currentQuestionIndex][language]}</p>
+        {currentQuestionIndex !== null && (
+          <div className="questionHolder">
+            <p>{currentQuestionIndex}</p>
+            <h3>{questionsData.find(question => question.id === currentQuestionIndex)[language]}</h3>
 
+            {errorMessage && (
+              <h1 className="error-message">{translations.error.message}</h1>
+            )}
+            {winningText && (
+              <h1 className="error-message">{translations.winner.text}</h1>
+            )}
 
-          <div className="buttonholder">
-            <button onClick={() => handleAnswer('yes')}>{translations.button.first}</button>
-            <button onClick={() => handleAnswer('no')}>{translations.button.second}</button>
-            <button onClick={() => handleAnswer("I don't know")}>{translations.button.third}</button>
+            <div className="buttonholder">
+              <button onClick={() => handleAnswer('yes')}>{translations.button.first}</button>
+              <button onClick={() => handleAnswer('no')}>{translations.button.second}</button>
+              <button onClick={() => handleAnswer("I don't know")}>{translations.button.third}</button>
+            </div>
           </div>
-        </div>
+        )}
+
 
         <div className="filteredCharacters">
           <h3>Filtered Characters:</h3>

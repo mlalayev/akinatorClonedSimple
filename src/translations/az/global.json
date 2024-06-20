@@ -7,5 +7,11 @@
         "first": "Hə",
         "second": "Yox",
         "third": "Bilmirəm"
+    },
+    "error": {
+        "message": "Deyəsən nəsə yanlışlıq oldu, zəhmət olmasa səhifəni yeniləyib, bir daha yoxlayın"
+    },
+    "winner": {
+        "text": "Akinator qalib gəldi! Yenidən oynamaq üçün səhifəni refresh et"
     }
 }

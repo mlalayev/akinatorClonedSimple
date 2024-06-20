@@ -3,9 +3,15 @@
         "first": "Akinator Clone App",
         "second": "I will ask you questions and will guess who you got in your mind"
     },
-    "button":{
-        "first":"Yes",
-        "second":"No",
-        "third":"I dont know"
+    "button": {
+        "first": "Yes",
+        "second": "No",
+        "third": "I dont know"
+    },
+    "error": {
+        "message": "Oops, something went wrong, please, refresh the page and try again"
+    },
+    "winner": {
+        "text": "Akinator has won! If you want to play again, refresh the page"
     }
 }

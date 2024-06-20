@@ -857,7 +857,7 @@
     "category": "cartoon",
     "real": "not-real",
     "age": "adult",
-    "occupation": "leader",
+    "occupation": "president",
     "universe": "Scooby-Doo",
     "fictional": true,
     "human": true,
@@ -1226,7 +1226,7 @@
   {
     "name": "Mustafa Kemal Atatürk",
     "gender": "male",
-    "category": "leader",
+    "category": "president",
     "real": "real",
     "age": "adult",
     "occupation": "Founder of Modern Turkey",
@@ -1250,7 +1250,7 @@
   {
     "name": "İsmet İnönü",
     "gender": "male",
-    "category": "leader",
+    "category": "president",
     "real": "real",
     "age": "adult",
     "occupation": "President",
@@ -1658,7 +1658,7 @@
   {
     "name": "Vladimir Lenin",
     "gender": "male",
-    "category": "leader",
+    "category": "president",
     "real": "real",
     "age": "adult",
     "occupation": "Revolutionary",
@@ -1670,7 +1670,7 @@
   {
     "name": "Joseph Stalin",
     "gender": "male",
-    "category": "leader",
+    "category": "president",
     "real": "real",
     "age": "adult",
     "occupation": "Dictator",
