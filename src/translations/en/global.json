@@ -1,0 +1,11 @@
+{
+    "uppertexth": {
+        "first": "Akinator Clone App",
+        "second": "I will ask you questions and will guess who you got in your mind"
+    },
+    "button":{
+        "first":"Yes",
+        "second":"No",
+        "third":"I dont know"
+    }
+}

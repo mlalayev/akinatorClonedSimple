@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "en": "Is your character real?",
+    "az": "Sizin xarakteriniz həqiqidir?"
+  },
+  {
+    "id": 2,
+    "en": "Is your character a male?",
+    "az": "Seçdiyiniz kişidir?"
+  },
+  {
+    "id": 3,
+    "en": "Is your character a human?",
+    "az": "Seçdiyiniz insandır?"
+  },
+  {
+    "id": 4,
+    "en": "Is your character fictional?",
+    "az": "Sizin xarakteriniz uydurmadır?"
+  },
+  {
+    "id": 5,
+    "en": "Is your character a female?",
+    "az": "Seçdiyiniz qadındır?"
+  },
+  {
+    "id": 6,
+    "en": "Is your character Azerbaijani?",
+    "az": "Seçdiyiniz Azərbaycanlıdır?"
+  },
+  {
+    "id": 7,
+    "en": "Is your character Turkish?",
+    "az": "Seçdiyiniz türk biri?"
+  },
+  {
+    "id": 8,
+    "en": "Is your character adult?",
+    "az": "Seçdiyiniz yetişkin birisidir?"
+  },
+  {
+    "id": 9,
+    "en": "Is your character a child?",
+    "az": "Seçdiyiniz uşaqdır?"
+  },
+  {
+    "id": 10,
+    "en": "Is your character a cartoon character?",
+    "az": "Sizin xarakteriniz çizgi film personajıdır?"
+  },
+  {
+    "id": 11,
+    "en": "Is your character alive?",
+    "az": "Sizin xarakteriniz sagdir?"
+  },
+  {
+    "id": 12,
+    "en": "Is your character a president?",
+    "az": "Sizin xarakteriniz prezidentdir?"
+  },
+  {
+    "id": 13,
+    "en": "Is your character a superhero?",
+    "az": "Sizin xarakteriniz süperqəhrəman?"
+  },
+  {
+    "id": 14,
+    "en": "Is your character from Marvel universe?",
+    "az": "Sizin xarakteriniz Marvel universumundandır?"
+  },
+  {
+    "id": 15,
+    "en": "Is your character from DC universe?",
+    "az": "Sizin xarakteriniz DC universumundandır?"
+  },
+  {
+    "id": 16,
+    "en": "Is your character an entertainer?",
+    "az": "Sizin xarakteriniz əyləndirəndir?"
+  },
+  {
+    "id": 17,
+    "en": "Is your character a nuclear safety inspector?",
+    "az": "Sizin xarakteriniz nüvə təhlükəsizlik inspektorudur?"
+  },
+  {
+    "id": 18,
+    "en": "Is your character an explorer?",
+    "az": "Sizin xarakteriniz müşahidəçidir?"
+  },
+  {
+    "id": 19,
+    "en": "Is your character a monster?",
+    "az": "Sizin xarakteriniz canavar?"
+  },
+  {
+    "id": 20,
+    "en": "Is your character a singer-songwriter?",
+    "az": "Sizin xarakteriniz ifaçı-bəstəkar?"
+  },
+  {
+    "id": 21,
+    "en": "Is your character an actor?",
+    "az": "Sizin xarakteriniz aktyor?"
+  },
+  {
+    "id": 22,
+    "en": "Is your character a trickster?",
+    "az": "Sizin xarakteriniz şarlatan?"
+  },
+  {
+    "id": 23,
+    "en": "Is your character a Chancellor?",
+    "az": "Sizin xarakteriniz kansler?"
+  },
+  {
+    "id": 24,
+    "en": "Is your character an astronaut?",
+    "az": "Sizin xarakteriniz astronavt?"
+  },
+  {
+    "id": 25,
+    "en": "Is your character a scientist?",
+    "az": "Sizin xarakteriniz elmi işçidir?"
+  },
+  {
+    "id": 26,
+    "en": "Is your character a poet?",
+    "az": "Sizin xarakteriniz şair?"
+  },
+  {
+    "id": 27,
+    "en": "Is your character a dancer?",
+    "az": "Sizin xarakteriniz rəqqas?"
+  },
+  {
+    "id": 28,
+    "en": "Is your character a writer?",
+    "az": "Sizin xarakteriniz yazıçı?"
+  },
+  {
+    "id": 29,
+    "en": "Is your character a composer?",
+    "az": "Sizin xarakteriniz bəstəkar?"
+  },
+  {
+    "id": 30,
+    "en": "Is your character a revolutionary?",
+    "az": "Sizin xarakteriniz inqilabçı?"
+  },
+  {
+    "id": 31,
+    "en": "Is your character a dictator?",
+    "az": "Sizin xarakteriniz diktator?"
+  },
+  {
+    "id": 32,
+    "en": "Is your character a physiologist?",
+    "az": "Sizin xarakteriniz fizioluq?"
+  },
+  {
+    "id": 33,
+    "en": "Is your character a general secretary of the Communist Party?",
+    "az": "Sizin xarakteriniz kommunist partiyasının baş katibi?"
+  },
+  {
+    "id": 34,
+    "en": "Is your character a ballet dancer?",
+    "az": "Sizin xarakteriniz balet rəqqası?"
+  },
+  {
+    "id": 35,
+    "en": "Is your character an animal?",
+    "az": "Sizin xarakteriniz heyvandır?"
+  },
+  {
+    "id": 36,
+    "en": "Is your character a leader?",
+    "az": "Sizin xarakteriniz rəhbərdir?"
+  }
+]
