@@ -9,33 +9,14 @@ function App() {
   const [language, setLanguage] = useState('en');
   const [winningText, setWinningText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [askedQuestions, setAskedQuestions] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [filteredCharacters, setFilteredCharacters] = useState(charactersData);
+  const [winningCharacter, setWinningCharacter] = useState(null);
 
   const translations = language === 'en' ? en : az;
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
-  };
-
-  useEffect(() => {
-    generateRandomQuestion();
-  }, []);
-
-  const generateRandomQuestion = () => {
-    const unansweredQuestions = questionsData.filter(question => !askedQuestions.includes(question.id));
-
-    if (unansweredQuestions.length === 0) {
-      setCurrentQuestionIndex(null);
-      return;
-    }
-
-    const randomIndex = Math.floor(Math.random() * unansweredQuestions.length);
-    const randomQuestion = unansweredQuestions[randomIndex];
-
-    setCurrentQuestionIndex(randomQuestion.id);
-    setAskedQuestions([...askedQuestions, randomQuestion.id]);
   };
 
   const handleAnswer = (answer) => {
@@ -337,8 +318,11 @@ function App() {
 
     setFilteredCharacters(updatedCharacters);
 
-    generateRandomQuestion();
+    if (currentQuestionIndex < questionsData.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
   };
+
 
   useEffect(() => {
     if (filteredCharacters.length === 0) {
@@ -351,8 +335,10 @@ function App() {
   useEffect(() => {
     if (filteredCharacters.length === 1) {
       setWinningText(translations.winner.text);
+      setWinningCharacter(filteredCharacters[0]); // Set winning character if only one remains
     } else {
       setWinningText('');
+      setWinningCharacter(null); // Reset winning character if not exactly one
     }
   }, [filteredCharacters]);
 
@@ -376,26 +362,29 @@ function App() {
         <h1>{translations.uppertexth.first}</h1>
         <h2>{translations.uppertexth.second}</h2>
 
-        {currentQuestionIndex !== null && (
-          <div className="questionHolder">
-            <p>{currentQuestionIndex}</p>
-            <h3>{questionsData.find(question => question.id === currentQuestionIndex)[language]}</h3>
+        <div className="questionHolder">
+          <p>{questionsData[currentQuestionIndex].id}</p>
+          <p>{questionsData[currentQuestionIndex][language]}</p>
 
-            {errorMessage && (
-              <h1 className="error-message">{translations.error.message}</h1>
-            )}
-            {winningText && (
+          {errorMessage && (
+            <h1 className="error-message">{translations.error.message}</h1>
+          )}
+          {winningText && (
+            <>
               <h1 className="error-message">{translations.winner.text}</h1>
-            )}
+              <h2 style={{
+                color: "gold",
+                textDecoration: "underline"
+              }}>{winningCharacter.name}</h2>
+            </>
+          )}
 
-            <div className="buttonholder">
-              <button onClick={() => handleAnswer('yes')}>{translations.button.first}</button>
-              <button onClick={() => handleAnswer('no')}>{translations.button.second}</button>
-              <button onClick={() => handleAnswer("I don't know")}>{translations.button.third}</button>
-            </div>
+          <div className="buttonholder">
+            <button onClick={() => handleAnswer('yes')}>{translations.button.first}</button>
+            <button onClick={() => handleAnswer('no')}>{translations.button.second}</button>
+            <button onClick={() => handleAnswer("I don't know")}>{translations.button.third}</button>
           </div>
-        )}
-
+        </div>
 
         <div className="filteredCharacters">
           <h3>Filtered Characters:</h3>
